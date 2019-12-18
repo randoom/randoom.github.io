@@ -1,14 +1,42 @@
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+		<meta name="format-detection" content="false">
 		<style>
+			* {margin:0}
 			canvas {border: 1px solid black}
+			button {width:50px; height: 50px;}
+			table {margin: 10px;}
 		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="800" height="600"/>
+		<canvas id="canvas"></canvas>
+		<div style="position: absolute; height:130px; left:0; right:0; bottom: 0;">
+			<table style="float: left;">
+				<tr>
+					<td></td>
+					<td><button keycode="90">z</button></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><button keycode="81">q</button></td>
+					<td><button keycode="83">s</button></td>
+					<td><button keycode="68">d</button></td>
+				</tr>
+			</table>
+			<table style="float: right;">
+				<tr>
+					<td></td>
+					<td><button keycode="38">&uarr;</button></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><button keycode="37">&larr;</button></td>
+					<td><button keycode="40">&darr;</button></td>
+					<td><button keycode="39">&rarr;</button></td>
+				</tr>
+			</table>
+		</div>
 		<script src="index.js"></script>
 	</body>
 </html>
-
-		
