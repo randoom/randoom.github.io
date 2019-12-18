@@ -212,8 +212,9 @@ window.onkeydown = function (e) {
     snakes.forEach(snake => snake.checkKey(e.keyCode));
 }
 
-document.querySelectorAll("button").forEach(b => {
-	b.onclick = ()=> snakes.forEach(snake => snake.checkKey(b.attributes["keycode"].value));
+document.querySelectorAll("button").forEach(b => {	
+	b.ontouchstart = (e) => snakes.forEach(snake => {snake.checkKey(b.attributes["keycode"].value); e.preventDefault();});
+	b.onclick = ()=> snakes.forEach(snake => snake.checkKey(b.attributes["keycode"].value));	
 });
 
 function resizeCanvas()
@@ -227,10 +228,10 @@ function resizeCanvas()
 	canvas.height =  rowCount * squareSize;
 }
 
-resizeCanvas();
-newGame();
-
 window.addEventListener('resize', ()=> {
 	resizeCanvas();
 	newGame();
 });
+
+resizeCanvas();
+newGame();
